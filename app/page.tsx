@@ -52,6 +52,16 @@ export default function LiveTypingChat() {
     };
   }, []);
 
+  const handlerDelete = () => {
+    if (editableRef.current) {
+      editableRef.current.textContent = "";
+      setText("");
+      if (ws) {
+        ws.send("");
+      }
+    }
+  };
+
   const handleInputChange = (e: FormEvent<HTMLDivElement> | null) => {
     if (!e) return;
     const newText: string = e.currentTarget.textContent || "";
@@ -239,7 +249,7 @@ export default function LiveTypingChat() {
                 : "font-playfair-display w-[400px] md:w-[620px] mx-auto font-medium text-[2em] md:text-[3em] transition-all duration-700"
             }
           >
-            Got something on your  mind? Let's talk!
+            Got something on your mind? Let's talk!
           </h2>
           {messages == "" ? (
             <p className="relative z-5 text-center md:text-[1em]/7 text-[0.8em]/6 mt-4 max-w-[300px] mx-auto text-zinc-600">
@@ -265,7 +275,10 @@ export default function LiveTypingChat() {
               className="border-2 bg-white w-full pr-20 dark:bg-black relative rounded-[25px] py-3 px-6 mt-10 editable-with-placeholder"
               data-placeholder={placeholderText}
             ></div>
-            <div className="bg-black dark:bg-white w-fit p-[5px] absolute rounded-lg  h-fit right-4 top-2.5">
+            <div
+              onClick={() => handlerDelete()}
+              className="bg-black dark:bg-white w-fit p-[5px] absolute rounded-lg  h-fit right-4 top-2.5"
+            >
               <svg
                 className="text-white dark:text-black"
                 xmlns="http://www.w3.org/2000/svg"
