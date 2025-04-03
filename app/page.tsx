@@ -31,7 +31,8 @@ export default function LiveTypingChat() {
   }, []);
 
   useEffect(() => {
-    const websocket = new WebSocket("http://localhost:8080/ws");
+    const websocket = new WebSocket("wss://chatflow-backend-1.onrender.com/ws");
+
 
     websocket.onopen = () => {
       setConnected(true);
