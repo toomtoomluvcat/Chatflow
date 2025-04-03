@@ -26,7 +26,7 @@ const geistMono = Geist_Mono({
 export const metadata: Metadata = {
   title: "Chatflow",
   description: "let's flow",
-  icons: "/favicon.ico", // ✅ ใช้ metadata แทน Head
+  icons: "/favicon.png", 
 };
 
 export default function RootLayout({
