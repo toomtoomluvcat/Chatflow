@@ -263,7 +263,7 @@ export default function LiveTypingChat() {
         </div>
         <div className={messages ? "mt-40" : "mt-100"}>
           {messages && (
-            <h2 className="text-center xl:mb-45 mb-10 text-[1.2em] relative z-5 text-white mx-auto py-4 px-6 rounded-full w-fit bg-zinc-800">
+            <h2 className="text-center xl:mb-45 mb-16 text-[1.2em] relative z-5 text-white mx-auto py-4 px-6 rounded-full w-fit bg-zinc-800">
               {messages}
             </h2>
           )}
