@@ -75,7 +75,7 @@ export default function LiveTypingChat() {
   };
 
   return (
-    <div>
+    <div className="max-w-screen overflow-hidden">
       <style jsx>{`
         .editable-with-placeholder:empty:before {
           content: attr(data-placeholder);
@@ -263,7 +263,7 @@ export default function LiveTypingChat() {
         </div>
         <div className={messages ? "mt-40" : "mt-100"}>
           {messages && (
-            <h2 className="text-center mb-45 text-[1.2em] relative z-5 text-white mx-auto py-4 px-6 rounded-full w-fit bg-zinc-800">
+            <h2 className="text-center xl:mb-45 mb-6 text-[1.2em] relative z-5 text-white mx-auto py-4 px-6 rounded-full w-fit bg-zinc-800">
               {messages}
             </h2>
           )}
